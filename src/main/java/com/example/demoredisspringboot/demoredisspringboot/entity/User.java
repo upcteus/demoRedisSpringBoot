@@ -6,9 +6,11 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
+import java.awt.*;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Data
@@ -28,9 +30,9 @@ public class User implements Serializable {
 
     private String profilePicture;
 
-    private Array followers;
+    private List<String> followers;
 
-    private Array following;
+    private List<String> following;
 
     private Boolean isFollowing;
 
