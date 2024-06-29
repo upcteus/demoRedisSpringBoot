@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.time.LocalDateTime;
 
 
@@ -27,9 +28,11 @@ public class User implements Serializable {
 
     private String profilePicture;
 
-    private String followers;
+    private Array followers;
 
-    private String following;
+    private Array following;
+
+    private boolean isFollowing;
 
     private LocalDateTime createdAt;
 }
