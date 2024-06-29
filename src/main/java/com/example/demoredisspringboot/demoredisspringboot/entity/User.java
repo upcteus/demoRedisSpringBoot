@@ -32,7 +32,7 @@ public class User implements Serializable {
 
     private Array following;
 
-    private boolean isFollowing;
+    private Boolean isFollowing;
 
     private LocalDateTime createdAt;
 }
