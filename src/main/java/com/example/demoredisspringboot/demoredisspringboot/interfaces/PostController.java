@@ -2,9 +2,11 @@ package com.example.demoredisspringboot.demoredisspringboot.interfaces;
 
 import com.example.demoredisspringboot.demoredisspringboot.entity.Post;
 import com.example.demoredisspringboot.demoredisspringboot.repository.PostDao;
+import jakarta.annotation.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -38,7 +40,11 @@ public class PostController {
     public Post updatePost(@PathVariable String id, @RequestBody Post post){
         Post postToUpdate = postDao.findPostById(id);
         postToUpdate.setContent(post.getContent());
+        postToUpdate.setImageUrl(post.getImageUrl();
         postToUpdate.setTags(post.getTags());
+        postToUpdate.setUserId(post.getUserId());
+        postToUpdate.setLikes(post.getLikes());
+        postToUpdate.setIsLiked(post.getIsLiked());
         return postDao.save(postToUpdate);
     }
 }
