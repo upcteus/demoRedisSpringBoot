@@ -9,6 +9,7 @@ import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Data
@@ -29,6 +30,10 @@ public class Post implements Serializable {
 
     @Nullable
     private String userId;
+    
+    private List<String> likes;
+    
+    private Boolean isLiked;
 
     private LocalDateTime createdAt;
 }
